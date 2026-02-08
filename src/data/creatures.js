@@ -830,19 +830,6 @@ export const creatures = {
 		weight: 70.0
 	},
 
-	Gloon: {
-		birthType: 'Incubation',
-		type: 'Carnivore',
-		baseFoodRate: 0,
-		babyFoodRate: 0,
-		extraBabyFoodRate: 0,
-		ageSpeed: 0,
-		ageSpeedMult: 0,
-		eggSpeed: 0,
-		eggSpeedMult: 0,
-		weight: 0
-	},
-
 	Hesperornis: {
 		birthType: 'Incubation',
 		type: 'Carnivore',
