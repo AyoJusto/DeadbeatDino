@@ -1,4 +1,4 @@
-export const foodlists = {
+export const foodLists = {
 	Carnivore: ['Raw Meat', 'Cooked Meat', 'Raw Fish Meat', 'Kibble'],
 	Herbivore: ['Mejoberry', 'Berry', 'Vegetables', 'Kibble'],
 	Omnivore: ['Raw Meat', 'Cooked Meat', 'Raw Fish Meat', 'Mejoberry', 'Berry', 'Kibble'],
@@ -9,7 +9,6 @@ export const foodlists = {
 	Carrion: ['Spoiled Meat', 'Raw Meat (Carrion)', 'Raw Fish Meat (Carrion)'],
 	Piscivore: ['Raw Fish Meat', 'Cooked Fish Meat'],
 	Wyvern: ['Wyvern Milk'],
-	// Voidwyrm: ['Mutagen'],
 	CrystalWyvern: ['Primal Crystal'],
 	Magmasaur: ['Ambergris', 'Sulfur'],
 	RockDrake: ['Nameless Venom'],
@@ -17,9 +16,10 @@ export const foodlists = {
 	Archelon: ['Vegetables (Archelon)', 'Bio Toxin', 'Berry (Archelon)']
 };
 
-export const foodlist = ['Raw Meat', 'Cooked Meat', 'Raw Fish Meat', 'Raw Fish Meat (Carrion)', 'Cooked Fish Meat', 'Mejoberry', 'Berry', 'Vegetables', 'Kibble', 'Rare Flower', 'Chitin', 'Spoiled Meat', 'Wyvern Milk', 'Mutagen', 'Primal Crystal', 'Ambergris', 'Nameless Venom', 'Raw Meat (Carrion)', 'Blood Pack', 'Sulfur', 'Vegetables (Archelon)', 'Bio Toxin', 'Berry (Archelon)']; //Display order
+export const foodList = ['Raw Meat', 'Cooked Meat', 'Raw Fish Meat', 'Raw Fish Meat (Carrion)', 'Cooked Fish Meat', 'Mejoberry', 'Berry', 'Vegetables', 'Kibble', 'Rare Flower', 'Chitin', 'Spoiled Meat', 'Wyvern Milk', 'Mutagen', 'Primal Crystal', 'Ambergris', 'Nameless Venom', 'Raw Meat (Carrion)', 'Blood Pack', 'Sulfur', 'Vegetables (Archelon)', 'Bio Toxin', 'Berry (Archelon)'];
 
-export const foodorder = ['Raw Fish Meat', 'Raw Fish Meat (Carrion)', 'Cooked Fish Meat', 'Raw Meat', 'Berry', 'Cooked Meat', 'Mejoberry', 'Vegetables', 'Kibble', 'Rare Flower', 'Chitin', 'Spoiled Meat', 'Wyvern Milk', 'Mutagen', 'Primal Crystal', 'Ambergris', 'Nameless Venom', 'Raw Meat (Carrion)', 'Blood Pack', 'Sulfur', 'Vegetables (Archelon)', 'Bio Toxin', 'Berry (Archelon)']; //In-game order
+// foodorder = in-game eating priority (differs from display order above)
+export const foodOrder = ['Raw Fish Meat', 'Raw Fish Meat (Carrion)', 'Cooked Fish Meat', 'Raw Meat', 'Berry', 'Cooked Meat', 'Mejoberry', 'Vegetables', 'Kibble', 'Rare Flower', 'Chitin', 'Spoiled Meat', 'Wyvern Milk', 'Mutagen', 'Primal Crystal', 'Ambergris', 'Nameless Venom', 'Raw Meat (Carrion)', 'Blood Pack', 'Sulfur', 'Vegetables (Archelon)', 'Bio Toxin', 'Berry (Archelon)'];
 
 export const troughTypes = {
 	Normal: 4,
@@ -27,7 +27,7 @@ export const troughTypes = {
 	Clicker: 1
 };
 
-export const foodrateTimeUnits = {
+export const foodRateTimeUnits = {
 	Minute: 1,
 	Hour: 60,
 	Day: 60*24

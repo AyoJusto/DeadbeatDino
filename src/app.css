@@ -1,0 +1,206 @@
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --pico-background-color: #0e0e0e;
+  --pico-card-background-color: #1a1a1a;
+  --pico-card-border-color: #2a2a2a;
+  --pico-card-sectioning-background-color: #141414;
+  --pico-primary: #e6922e;
+  --pico-primary-hover: #f0a348;
+  --pico-primary-focus: rgba(230, 146, 46, 0.25);
+  --pico-primary-inverse: #0e0e0e;
+  --pico-color: #d0d0d0;
+  --pico-h1-color: #e0e0e0;
+  --pico-h2-color: #e0e0e0;
+  --pico-h3-color: #e0e0e0;
+  --pico-muted-color: #707070;
+  --pico-muted-border-color: #2a2a2a;
+  --pico-form-element-background-color: #141414;
+  --pico-form-element-border-color: #2a2a2a;
+  --pico-form-element-active-background-color: #1a1a1a;
+  --pico-form-element-active-border-color: #e6922e;
+  --pico-form-element-focus-color: #e6922e;
+  --pico-table-border-color: #2a2a2a;
+  --pico-code-background-color: #141414;
+  --pico-switch-background-color: #2a2a2a;
+  --pico-switch-checked-background-color: #e6922e;
+  --pico-secondary: #8a8a8a;
+  --pico-secondary-hover: #a0a0a0;
+  --pico-outline-color: rgba(230, 146, 46, 0.25);
+}
+
+[data-theme="light"] {
+  --pico-background-color: #f5f3f0;
+  --pico-card-background-color: #ffffff;
+  --pico-card-border-color: #e0dcd6;
+  --pico-card-sectioning-background-color: #f0ece6;
+  --pico-primary: #b8741a;
+  --pico-primary-hover: #9a6015;
+  --pico-primary-focus: rgba(184, 116, 26, 0.2);
+  --pico-primary-inverse: #ffffff;
+  --pico-color: #2a2520;
+  --pico-h1-color: #1a1510;
+  --pico-h2-color: #1a1510;
+  --pico-h3-color: #1a1510;
+  --pico-muted-color: #7a7570;
+  --pico-muted-border-color: #e0dcd6;
+  --pico-form-element-background-color: #ffffff;
+  --pico-form-element-border-color: #d0ccc6;
+  --pico-form-element-active-background-color: #ffffff;
+  --pico-form-element-active-border-color: #b8741a;
+  --pico-form-element-focus-color: #b8741a;
+  --pico-table-border-color: #e0dcd6;
+  --pico-switch-checked-background-color: #b8741a;
+  --pico-outline-color: rgba(184, 116, 26, 0.2);
+}
+
+article {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--pico-card-border-color);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+[data-theme="light"] article {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+article > header {
+  border-left: 3px solid var(--pico-primary);
+  padding: 0.5rem 0.75rem;
+  margin: -0.75rem -0.75rem 0.75rem;
+}
+
+article hr {
+  margin: 0.75rem 0;
+}
+
+nav li:first-child strong {
+  color: var(--pico-primary);
+  letter-spacing: 0.5px;
+}
+
+nav {
+  border-bottom: 1px solid var(--pico-muted-border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+hgroup {
+  margin-bottom: 1rem;
+}
+
+.grid {
+  gap: 0.5rem;
+}
+
+.container {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.hero-answer {
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 2px solid var(--pico-primary);
+  border-radius: var(--pico-border-radius);
+  background: linear-gradient(
+    135deg,
+    rgba(230, 146, 46, 0.05) 0%,
+    transparent 60%
+  );
+  box-shadow: 0 0 20px rgba(230, 146, 46, 0.1);
+}
+
+[data-theme="light"] .hero-answer {
+  background: linear-gradient(
+    135deg,
+    rgba(184, 116, 26, 0.06) 0%,
+    transparent 60%
+  );
+  box-shadow: 0 0 20px rgba(184, 116, 26, 0.08);
+}
+
+.hero-label {
+  font-size: 0.9rem;
+  color: var(--pico-muted-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--pico-primary);
+  line-height: 1.2;
+  margin: 0.25rem 0;
+}
+
+.hero-subtext {
+  font-size: 0.85rem;
+  color: var(--pico-muted-color);
+}
+
+.maturation-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.maturation-slider input[type="range"] {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.maturation-slider input[type="number"] {
+  width: 5rem;
+  flex-shrink: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: var(--pico-primary);
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: var(--pico-primary);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--pico-muted-border-color);
+}
+
+input[type="range"]::-moz-range-track {
+  background: var(--pico-muted-border-color);
+}
+
+
+.inputs-grid {
+  align-items: end;
+}
+
+.inputs-grid label {
+  margin-bottom: 0;
+}
+
+.inputs-grid input,
+.inputs-grid select {
+  margin-bottom: 0;
+}
+
+.creature-stats {
+  color: var(--pico-muted-color);
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0.75rem;
+}
+
+@media (max-width: 576px) {
+  .hero-value {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.8rem;
+  }
+}

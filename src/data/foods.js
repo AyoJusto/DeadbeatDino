@@ -186,7 +186,6 @@ export const defaultFoods = {
 };
 
 export const primFoods = {
-	//Prim Plus Stacksize is only 20 for fish meat!
 	'Raw Fish Meat': {
 		food: 25,
 		stack: 20,
@@ -211,7 +210,6 @@ export const primFoods = {
 		waste: 0
 	},
 
-	//Prim Plus Stacksize is only 20 for meat!
 	'Raw Meat': {
 		food: 50,
 		stack: 20,
