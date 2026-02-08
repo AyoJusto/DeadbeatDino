@@ -109,7 +109,7 @@
             id="maturation-number"
             name="maturation-number"
             type="number"
-            inputmode="numeric"
+            inputmode="decimal"
             min="0"
             max="100"
             step="1"
@@ -121,7 +121,7 @@
       </label>
       <label>
         Weight
-        <input id="weight" name="weight" type="number" inputmode="numeric" bind:value={finalWeight} min="1" step="1" on:keydown={blockAlpha} />
+        <input id="weight" name="weight" type="number" inputmode="decimal" bind:value={finalWeight} min="1" step="1" on:keydown={blockAlpha} />
       </label>
       {#if creatureData}
         <FoodSelector options={foodLists[creatureData.type] || []} selected={foodUnit} on:select={(e) => foodUnit = e.detail} />

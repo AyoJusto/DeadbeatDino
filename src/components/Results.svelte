@@ -91,7 +91,7 @@
         </div>
         <label class="stat buffer-input">
           <small>Desired Buffer (min)</small>
-          <input type="number" inputmode="numeric" value={desiredBabyBuffer} on:input={onBufferInput} min="0" max="600" step="1" on:keydown={blockAlpha} />
+          <input type="number" inputmode="decimal" value={desiredBabyBuffer} on:input={onBufferInput} min="0" max="600" step="1" on:keydown={blockAlpha} />
         </label>
       </div>
     {/if}

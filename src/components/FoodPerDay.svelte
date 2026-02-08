@@ -18,7 +18,7 @@
     <header><strong>Food Per Day ({foodUnit})</strong></header>
     <label>
       Loss Factor %
-      <input id="loss-factor" name="loss-factor" type="number" inputmode="numeric" bind:value={lossFactor} on:input={changed} min="0" max="100" step="1" on:keydown={blockAlpha} />
+      <input id="loss-factor" name="loss-factor" type="number" inputmode="decimal" bind:value={lossFactor} on:input={changed} min="0" max="100" step="1" on:keydown={blockAlpha} />
     </label>
     <figure>
       <table>
