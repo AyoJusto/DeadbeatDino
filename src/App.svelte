@@ -15,7 +15,8 @@
   const saved = loadState(creatures);
 
   let creatureName = saved?.creatureName || '';
-  let maturationProgress = saved?.maturationProgress || 0;
+  let matPercent = (saved?.maturationProgress || 0) * 100;
+  $: maturationProgress = matPercent / 100;
   let finalWeight = saved?.finalWeight || 0;
   let desiredBabyBuffer = saved?.desiredBabyBuffer || 30;
   let settings = saved?.settings ? { ...defaultSettings, ...saved.settings } : { ...defaultSettings };
@@ -48,7 +49,7 @@
 
   function onCreatureSelect(e) {
     creatureName = e.detail;
-    maturationProgress = 0;
+    matPercent = 0;
     const cd = creatures[creatureName];
     finalWeight = cd.weight;
     desiredBabyBuffer = 30;
@@ -94,30 +95,17 @@
     <div class="grid inputs-grid">
       <label>
         Maturation %
-        <div class="maturation-slider">
-          <input
-            id="maturation-range"
-            name="maturation-range"
-            type="range"
-            min="0"
-            max="100"
-            step="1"
-            value={Math.round(maturationProgress * 100)}
-            on:input={(e) => maturationProgress = Number(e.target.value) / 100}
-          />
-          <input
-            id="maturation-number"
-            name="maturation-number"
-            type="number"
-            inputmode="decimal"
-            min="0"
-            max="100"
-            step="0.1"
-            value={maturationProgress * 100}
-            on:input={(e) => maturationProgress = Math.min(100, Math.max(0, Number(e.target.value))) / 100}
-            on:keydown={blockAlpha}
-          />
-        </div>
+        <input
+          id="maturation-number"
+          name="maturation-number"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          max="100"
+          step="0.1"
+          bind:value={matPercent}
+          on:keydown={blockAlpha}
+        />
       </label>
       <label>
         Weight
