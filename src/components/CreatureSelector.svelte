@@ -16,7 +16,7 @@
     ? names.filter(n => n.toLowerCase().includes(search.toLowerCase()))
     : names;
 
-  $: visibleItems = filtered.slice(0, 20);
+  $: visibleItems = filtered;
 
   $: filtered, highlightIndex = -1;
 
@@ -102,9 +102,6 @@
         {name}
       </li>
     {/each}
-    {#if filtered.length > 20}
-      <li class="more">...{filtered.length - 20} more</li>
-    {/if}
   </ul>
 {/if}
 
@@ -128,10 +125,5 @@
   .creature-dropdown li:hover,
   .creature-dropdown li.highlighted {
     background: var(--pico-primary-focus);
-  }
-  .creature-dropdown li.more {
-    color: var(--pico-muted-color);
-    cursor: default;
-    font-size: 0.875rem;
   }
 </style>

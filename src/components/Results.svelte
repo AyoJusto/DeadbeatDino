@@ -1,11 +1,19 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import { formatTime } from '../lib/format.js';
 
   export let stats = null;
   export let maturation = null;
   export let totalFood = null;
   export let babyBuffer = null;
+  export let desiredBabyBuffer = 30;
   export let foodUnit = '';
+
+  const dispatch = createEventDispatcher();
+
+  function onBufferInput(e) {
+    dispatch('bufferchange', Number(e.target.value));
+  }
 </script>
 
 <style>
@@ -20,6 +28,14 @@
     font-size: 1.15rem;
     font-weight: 600;
     color: var(--pico-color);
+  }
+
+  .buffer-input {
+    margin-bottom: 0;
+  }
+
+  .buffer-input input {
+    margin-bottom: 0;
   }
 </style>
 
@@ -73,6 +89,10 @@
           <small>Time to Desired Buffer</small>
           <div class="val">{formatTime(babyBuffer.timeUntilDesiredBabyBuffer)}</div>
         </div>
+        <label class="stat buffer-input">
+          <small>Desired Buffer (min)</small>
+          <input type="number" value={desiredBabyBuffer} on:input={onBufferInput} min="0" max="600" step="1" />
+        </label>
       </div>
     {/if}
   </article>

@@ -12,7 +12,7 @@
 
 <details>
   <summary>Server Settings</summary>
-  <div class="grid">
+  <div class="grid inputs-grid">
     <label>
       Maturation Speed
       <input id="maturation-speed" name="maturation-speed" type="number" bind:value={settings.maturationSpeed} on:input={changed} min="0.1" step="0.1" />

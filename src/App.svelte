@@ -80,6 +80,8 @@
     </ul>
   </nav>
 
+  <ServerSettings {settings} on:change={onSettingsChange} />
+
   <CreatureSelector {creatures} selected={creatureName} on:select={onCreatureSelect} />
 
   {#if stats}
@@ -119,10 +121,6 @@
         Weight
         <input id="weight" name="weight" type="number" bind:value={finalWeight} min="1" step="1" />
       </label>
-      <label>
-        Desired Buffer (min)
-        <input id="desired-buffer" name="desired-buffer" type="number" bind:value={desiredBabyBuffer} min="0" max="600" step="1" />
-      </label>
       {#if creatureData}
         <FoodSelector options={foodLists[creatureData.type] || []} selected={foodUnit} on:select={(e) => foodUnit = e.detail} />
       {/if}
@@ -139,9 +137,7 @@
     </div>
   {/if}
 
-  <ServerSettings {settings} on:change={onSettingsChange} />
-
-  <Results {stats} {maturation} {totalFood} {babyBuffer} foodUnit={foodUnit} />
+  <Results {stats} {maturation} {totalFood} {babyBuffer} {desiredBabyBuffer} foodUnit={foodUnit} on:bufferchange={(e) => desiredBabyBuffer = e.detail} />
 
   <FoodPerDay {totalFood} lossFactor={settings.lossFactor} foodUnit={foodUnit} on:lossfactor={onLossFactorChange} />
 
