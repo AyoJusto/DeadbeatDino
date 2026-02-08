@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { blockAlpha } from '../lib/format.js';
 
   export let totalFood = null;
   export let lossFactor = 0;
@@ -17,7 +18,7 @@
     <header><strong>Food Per Day ({foodUnit})</strong></header>
     <label>
       Loss Factor %
-      <input id="loss-factor" name="loss-factor" type="number" bind:value={lossFactor} on:input={changed} min="0" max="100" step="1" />
+      <input id="loss-factor" name="loss-factor" type="number" inputmode="numeric" bind:value={lossFactor} on:input={changed} min="0" max="100" step="1" on:keydown={blockAlpha} />
     </label>
     <figure>
       <table>

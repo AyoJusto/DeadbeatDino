@@ -11,3 +11,7 @@ export function formatTime(totalSeconds) {
 export function formatPercent(value) {
 	return (Math.ceil(value * 1000) / 10).toFixed(1);
 }
+
+export function blockAlpha(e) {
+	if (e.key === 'e' || e.key === 'E') e.preventDefault();
+}

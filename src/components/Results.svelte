@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { formatTime } from '../lib/format.js';
+  import { formatTime, blockAlpha } from '../lib/format.js';
 
   export let stats = null;
   export let maturation = null;
@@ -91,7 +91,7 @@
         </div>
         <label class="stat buffer-input">
           <small>Desired Buffer (min)</small>
-          <input type="number" value={desiredBabyBuffer} on:input={onBufferInput} min="0" max="600" step="1" />
+          <input type="number" inputmode="numeric" value={desiredBabyBuffer} on:input={onBufferInput} min="0" max="600" step="1" on:keydown={blockAlpha} />
         </label>
       </div>
     {/if}

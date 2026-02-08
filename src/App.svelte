@@ -9,7 +9,7 @@
   import { defaultFoods } from './data/foods.js';
   import { foodLists, foodOrder, troughTypes, foodRateTimeUnits } from './data/foodlists.js';
   import { calcStats, calcMaturation, calcTotalFood, calcFinalBuffer, calcDesiredBuffer, calcBabyBuffer } from './lib/calc.js';
-  import { formatTime, formatPercent } from './lib/format.js';
+  import { formatTime, formatPercent, blockAlpha } from './lib/format.js';
   import { defaultSettings, loadState, saveState } from './lib/storage.js';
 
   const saved = loadState(creatures);
@@ -109,17 +109,19 @@
             id="maturation-number"
             name="maturation-number"
             type="number"
+            inputmode="numeric"
             min="0"
             max="100"
             step="1"
             value={Math.round(maturationProgress * 100)}
             on:input={(e) => maturationProgress = Math.min(100, Math.max(0, Number(e.target.value))) / 100}
+            on:keydown={blockAlpha}
           />
         </div>
       </label>
       <label>
         Weight
-        <input id="weight" name="weight" type="number" bind:value={finalWeight} min="1" step="1" />
+        <input id="weight" name="weight" type="number" inputmode="numeric" bind:value={finalWeight} min="1" step="1" on:keydown={blockAlpha} />
       </label>
       {#if creatureData}
         <FoodSelector options={foodLists[creatureData.type] || []} selected={foodUnit} on:select={(e) => foodUnit = e.detail} />
