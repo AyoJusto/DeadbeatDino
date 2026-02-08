@@ -112,8 +112,8 @@
             inputmode="decimal"
             min="0"
             max="100"
-            step="1"
-            value={Math.round(maturationProgress * 100)}
+            step="0.1"
+            value={maturationProgress * 100}
             on:input={(e) => maturationProgress = Math.min(100, Math.max(0, Number(e.target.value))) / 100}
             on:keydown={blockAlpha}
           />
